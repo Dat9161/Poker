@@ -1,0 +1,49 @@
+╔═══════════════════════════════════════════════════════════╗
+║          ⚠️  THÔNG BÁO QUAN TRỌNG - PORT CHANGE           ║
+╚═══════════════════════════════════════════════════════════╝
+
+MySQL đã được cấu hình chạy trên PORT 3307 thay vì 3306
+để tránh xung đột với MySQL hiện có trên máy bạn.
+
+┌───────────────────────────────────────────────────────────┐
+│  THÔNG TIN KẾT NỐI MYSQL MỚI                              │
+└───────────────────────────────────────────────────────────┘
+
+  Host:     localhost
+  Port:     3307  ← ĐÃ THAY ĐỔI (trước đây là 3306)
+  Database: poker_db
+  Username: poker_user
+  Password: poker_password
+
+┌───────────────────────────────────────────────────────────┐
+│  CÁCH SỬ DỤNG                                             │
+└───────────────────────────────────────────────────────────┘
+
+1. Khởi động ứng dụng:
+   docker-compose up --build
+
+2. Kết nối MySQL từ command line:
+   docker exec -it poker-mysql mysql -u poker_user -ppoker_password poker_db
+
+3. Kết nối từ MySQL Workbench:
+   - Host: localhost
+   - Port: 3307  ← Nhớ đổi port!
+   - Username: poker_user
+   - Password: poker_password
+
+┌───────────────────────────────────────────────────────────┐
+│  LỢI ÍCH                                                  │
+└───────────────────────────────────────────────────────────┘
+
+✅ Không xung đột với MySQL hiện tại (port 3306)
+✅ Có thể chạy cả 2 MySQL cùng lúc
+✅ Không cần tắt MySQL hiện tại của bạn
+✅ Backend tự động kết nối đúng
+
+┌───────────────────────────────────────────────────────────┐
+│  XEM THÊM                                                 │
+└───────────────────────────────────────────────────────────┘
+
+Đọc file PORT_CHANGE_GUIDE.md để biết chi tiết.
+
+═══════════════════════════════════════════════════════════

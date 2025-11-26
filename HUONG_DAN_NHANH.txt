@@ -1,0 +1,164 @@
+═══════════════════════════════════════════════════════════════
+                    HƯỚNG DẪN NHANH
+                   POKER GAME APPLICATION
+═══════════════════════════════════════════════════════════════
+
+
+⚠️  LƯU Ý QUAN TRỌNG
+───────────────────────────────────────────────────────────────
+
+MySQL chạy trên PORT 3307 (không phải 3306)
+Lý do: Tránh xung đột với MySQL hiện có trên máy bạn
+
+
+🚀 CÁCH CHẠY (3 BƯỚC ĐƠN GIẢN)
+───────────────────────────────────────────────────────────────
+
+BƯỚC 1: Mở Command Prompt hoặc Terminal
+
+BƯỚC 2: Gõ lệnh này và Enter
+
+    docker-compose up --build
+
+BƯỚC 3: Đợi 3-5 phút, sau đó mở trình duyệt
+
+    http://localhost:3000
+
+
+🔑 ĐĂNG NHẬP
+───────────────────────────────────────────────────────────────
+
+Tên đăng nhập: player1
+Mật khẩu:       password123
+
+
+🎮 CÁCH CHƠI
+───────────────────────────────────────────────────────────────
+
+1. Đăng nhập vào hệ thống
+2. Tạo phòng mới hoặc vào phòng có sẵn
+3. Chờ thêm người chơi (tối thiểu 2 người)
+4. Game tự động bắt đầu
+5. Dùng các nút: Fold, Check, Call, Raise
+
+
+🗄️ KẾT NỐI MYSQL (Nếu cần)
+───────────────────────────────────────────────────────────────
+
+Từ Command Line:
+
+    docker exec -it poker-mysql mysql -u poker_user -ppoker_password poker_db
+
+Từ MySQL Workbench:
+
+    Host:     localhost
+    Port:     3307  ← QUAN TRỌNG! (Không phải 3306)
+    Database: poker_db
+    Username: poker_user
+    Password: poker_password
+
+
+🛑 DỪNG ỨNG DỤNG
+───────────────────────────────────────────────────────────────
+
+Nhấn Ctrl + C trong cửa sổ Command Prompt/Terminal
+
+Hoặc gõ:
+
+    docker-compose down
+
+
+🔄 KHỞI ĐỘNG LẠI
+───────────────────────────────────────────────────────────────
+
+    docker-compose down
+    docker-compose up --build
+
+
+🗑️ XÓA DỮ LIỆU VÀ KHỞI ĐỘNG LẠI
+───────────────────────────────────────────────────────────────
+
+    docker-compose down -v
+    docker-compose up --build
+
+
+❓ GẶP LỖI?
+───────────────────────────────────────────────────────────────
+
+Lỗi: Port đã được sử dụng
+→ Đọc file PORT_CHANGE_GUIDE.md
+
+Lỗi: MySQL không chạy
+→ Đọc file MYSQL_GUIDE.md
+
+Lỗi: Docker không chạy
+→ Mở Docker Desktop trước
+
+Không biết làm gì
+→ Đọc file START_HERE.md
+
+
+📚 TÀI LIỆU CHI TIẾT
+───────────────────────────────────────────────────────────────
+
+00_READ_ME_FIRST.txt      - Đọc đầu tiên
+START_HERE.md             - Hướng dẫn bắt đầu
+QUICKSTART.md             - Hướng dẫn nhanh
+CHECKLIST.md              - Danh sách kiểm tra
+MYSQL_GUIDE.md            - Hướng dẫn MySQL
+PORT_CHANGE_GUIDE.md      - Hướng dẫn về port
+DOCS_INDEX.md             - Danh sách tất cả tài liệu
+
+
+🔧 KIỂM TRA PORT
+───────────────────────────────────────────────────────────────
+
+Windows:
+    check-ports.bat
+
+Mac/Linux:
+    ./check-ports.sh
+
+
+📊 THÔNG TIN HỆ THỐNG
+───────────────────────────────────────────────────────────────
+
+Frontend:  http://localhost:3000
+Backend:   http://localhost:8080
+MySQL:     localhost:3307
+
+
+✨ TÍNH NĂNG
+───────────────────────────────────────────────────────────────
+
+✅ Đăng nhập/Đăng ký
+✅ Tạo và tham gia phòng
+✅ Chơi Poker real-time
+✅ Bảng xếp hạng
+✅ Quản lý chip
+✅ Lịch sử game
+
+
+💡 MẸO
+───────────────────────────────────────────────────────────────
+
+- Mở 2 trình duyệt để test game với 2 người chơi
+- Dùng Incognito/Private mode cho tài khoản thứ 2
+- Xem logs: docker-compose logs -f
+- Kiểm tra containers: docker ps
+
+
+📞 CẦN TRỢ GIÚP?
+───────────────────────────────────────────────────────────────
+
+1. Đọc file DOCS_INDEX.md
+2. Tìm tài liệu phù hợp
+3. Làm theo hướng dẫn
+4. Vẫn không được? Tạo issue trên GitHub
+
+
+═══════════════════════════════════════════════════════════════
+
+            Chúc bạn chơi vui vẻ! 🎰🃏
+
+═══════════════════════════════════════════════════════════════

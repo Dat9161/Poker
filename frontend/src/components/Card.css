@@ -1,0 +1,59 @@
+.poker-card {
+  background: white;
+  width: 80px;
+  height: 110px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.poker-card:hover {
+  transform: translateY(-10px);
+}
+
+.poker-card.player-card {
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border: 3px solid #ffd700;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-content.red {
+  color: #e74c3c;
+}
+
+.card-content.black {
+  color: #2c3e50;
+}
+
+.card-value {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.card-suit {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .poker-card {
+    width: 60px;
+    height: 85px;
+  }
+  
+  .card-value {
+    font-size: 24px;
+  }
+  
+  .card-suit {
+    font-size: 18px;
+  }
+}

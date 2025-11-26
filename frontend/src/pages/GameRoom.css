@@ -1,0 +1,250 @@
+.game-room {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.game-header {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-header h2 {
+  margin: 0;
+  color: #1e3c72;
+}
+
+.game-info {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.game-table {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0f7e3a 0%, #1a9e4f 100%);
+  border-radius: 200px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 8px solid #8b4513;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.community-cards {
+  text-align: center;
+}
+
+.community-cards h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 80px;
+  height: 110px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.player-card {
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border: 3px solid #ffd700;
+}
+
+.card-placeholder {
+  background: rgba(255, 255, 255, 0.2);
+  width: 80px;
+  height: 110px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.players-area {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.players-area h3 {
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.players-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.player-info {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.player-info.current-user {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 2px solid #ff9800;
+}
+
+.player-info.active-turn {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.player-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.player-chips,
+.player-bet {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.player-hand {
+  text-align: center;
+}
+
+.player-hand h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.raise-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.raise-controls input {
+  width: 150px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.waiting-message {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-result {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+}
+
+.game-result h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.game-result p {
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .game-table {
+    border-radius: 50px;
+    padding: 20px;
+  }
+  
+  .card {
+    width: 60px;
+    height: 85px;
+    font-size: 24px;
+  }
+  
+  .card-placeholder {
+    width: 60px;
+    height: 85px;
+    font-size: 12px;
+  }
+  
+  .game-actions {
+    flex-direction: column;
+  }
+  
+  .raise-controls {
+    flex-direction: column;
+  }
+  
+  .raise-controls input {
+    width: 100%;
+  }
+  
+  .players-list {
+    grid-template-columns: 1fr;
+  }
+}
